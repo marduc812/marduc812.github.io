@@ -78,6 +78,8 @@ I did a small bash script so I don’t have to write the command all the time. I
 
 `$ sonar_search.sh google.com`
 
+<script src="https://gist.github.com/marduc812/42dc5a11f5d1042a728680410eaa6fb7.js"></script>
+
 ### References
 
 ##### DNS Records

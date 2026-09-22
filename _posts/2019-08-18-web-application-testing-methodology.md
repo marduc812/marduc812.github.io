@@ -18,7 +18,7 @@ Below I will explain all the issues, listed on this checklist.
 
 ## → Information Gathering
 
-### Crawling / File Enumeration
+### Crawling / File Enumeration {#crawling}
 
 After a scope is specified for a Web Application pentest, fire up your favourite directory brute-force tool and feed it a list in order to identify files and folder for your in-scope domain. After some folders are found, it can help you identify the technology in use. In case you use Burp Suite you can use its crawler that is great, also the functionality for content discovery. You can read further information about Burp Suite and tips [here](https://marduc812.com/2019/01/21/burp-suite-battle-royale-edition/).
 
@@ -85,7 +85,7 @@ Nowadays, directory listing is not enabled by default for most of the public sof
 ##### Reference
 
 - [BurpSuite](https://portswigger.net/burp)
-- Use tools listed on [Crawling / File Enumeration](#crawling--file-enumeration) step
+- Use tools listed on [Crawling / File Enumeration](#crawling) step
 
 ---
 

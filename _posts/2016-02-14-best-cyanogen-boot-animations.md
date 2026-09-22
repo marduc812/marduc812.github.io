@@ -12,6 +12,8 @@ If you had had tried CyanogenMod, probably you have notice that it takes a whil
 
 Thos Boot Animation is created by benmeroff. The shapes are taken from the famous WatchDogs game. I used to have this as my boot animation for more that 3 months. This one worked for me also on CM13 without any issues.
 
+<iframe allowfullscreen="" frameborder="0" height="900" loading="lazy" src="https://www.youtube.com/embed/yB_Xso-oZVg?feature=oembed" width="1200"></iframe>
+
 [download](https://play.google.com/store/apps/details?id=com.benmeroff.ctosboot)
 
 ---
@@ -25,6 +27,8 @@ Thos Boot Animation is created by benmeroff. The shapes are taken from the famo
 ---
 
 ### CM12/CM11 Arc Bootanimation
+
+<iframe allowfullscreen="" frameborder="0" height="900" loading="lazy" src="https://www.youtube.com/embed/J_AlO5XLWkU?feature=oembed" width="1200"></iframe>
 
 [download](https://play.google.com/store/apps/details?id=com.deepen.arcreactor)
 
@@ -73,6 +77,8 @@ Thos Boot Animation is created by benmeroff. The shapes are taken from the famo
 Mountain, Forest, City, Train Station and Ocean Rain were all made by user [jajb](http://forum.xda-developers.com/member.php?u=5772029) from xda-developers. You can see the full post [here](http://forum.xda-developers.com/showthread.php?t=2767146). Of course if you want a bigger collection of boot animations you can download  an app that will do this work for you. The app I liked the most was **Bhoot – boot animations** that has a really easy interface and a really good collection of boot animations. You can download Bhoot by clicking the button below.
 
 [download](https://play.google.com/store/apps/details?id=uk.co.bhoot)
+
+<iframe allowfullscreen="" frameborder="0" height="675" loading="lazy" src="https://www.youtube.com/embed/N0tqzVWxpJk?feature=oembed" width="1200"></iframe>
 
 Finally my favourite “boot animation” was **LiveBoot**. I used the premium version that gives you more features and what is actually does is displaying the logcat of the phone, while booting. You can select for the background to be black so it looks like a boot animation, or you can select to run over your current boot animation. This app is developed by Chainfire, the creator of  SuperSU and more great apps. You can download the app for free from the button below.
 

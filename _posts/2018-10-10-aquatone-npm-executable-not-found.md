@@ -1,5 +1,5 @@
 ---
-title: "Aquatone &#8211; npm executable not found"
+title: "Aquatone – npm executable not found"
 date: 2018-10-10T17:41:52
 categories: ["Security", "Tuts"]
 tags: ["Security", "tutorial"]
@@ -27,31 +27,19 @@ This error pops up when some is on the gather script. The message is pretty clea
 
 Clone `npm` from their official Github https://github.com/npm/cli (*Note is was recently moved from https://github.com/npm/npm*) and install it using `Make`.
 
-```
-```
+```text
 git clone https://github.com/npm/cli.git
 cd cli
 make install
 ```
 
-
-
 ##### Verify installation
 
-
-
-```
-```
+```text
 npm -v
 ```
 
-
-
 ### More info
 
-
-
-- @michenriksen
-- Aquatone Github
-```
-```
+- [@michenriksen](https://michenriksen.com/)
+- [Aquatone Github](https://github.com/michenriksen/aquatone)

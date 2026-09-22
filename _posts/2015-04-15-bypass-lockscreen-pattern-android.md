@@ -32,21 +32,21 @@ Using terminal I had to go to my SDK folder.
 First I had to do  
 Since I use a Mac in front of adb command I had to use “/.”, on linux you don’t have to.
 
-```
+```bash
 
 ./adb reboot recovery
 ```
 
 This reboots phone and get’s it into recovery mode. You can also do it by pressing Power and Volume down button at the same time when you turn on your phone.
 
-```
+```bash
 
 ./adb shell
 ```
 
 Now we have to run the following commands in order to remove the password/pattern files form the device.
 
-```
+```bash
 
 rm /data/system/locksettings.db
 rm /data/system/locksettings.db-wal

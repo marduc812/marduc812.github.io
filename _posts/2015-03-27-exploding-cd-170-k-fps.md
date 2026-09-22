@@ -11,3 +11,5 @@ Slow Mo did an other great slow motion video this time with a CD. CDs usually ca
 Normal cameras usually take 25 to 30 frames or even 60 (You can have slow motion at 120 or 240 frames). Phantom takes 1M frames per second. That means that for a normal camera it takes 40.000 seconds (11.11 Hours) to record the same number of frames.
 
 Take a look at the video.
+
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="675" loading="lazy" src="https://www.youtube.com/embed/zs7x1Hu29Wc?feature=oembed" title="CD Shattering at 170,000FPS! - The Slow Mo Guys" width="1200"></iframe>

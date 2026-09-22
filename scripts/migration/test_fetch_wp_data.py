@@ -4,7 +4,7 @@ import urllib.request
 from urllib.parse import urlparse, parse_qs
 from unittest.mock import patch, MagicMock
 
-from fetch_wp_data import fetch_all
+from fetch_wp_data import fetch_all, save_items
 
 
 def _page_of(request):
@@ -54,3 +54,34 @@ def test_fetch_all_empty_batch_stops_pagination():
         result = fetch_all("posts")
 
     assert result == []
+
+
+def test_save_items_keeps_existing_file_on_empty_fetch(tmp_path):
+    """A transient empty fetch must not truncate a good local copy to
+    zero items - that data only exists on the (soon to be decommissioned)
+    WP host, so overwriting it is unrecoverable."""
+    path = tmp_path / "posts.json"
+    path.write_text(json.dumps([{"id": 1}, {"id": 2}]))
+
+    save_items(str(path), [], "posts")
+
+    assert json.loads(path.read_text()) == [{"id": 1}, {"id": 2}]
+
+
+def test_save_items_writes_empty_result_when_no_existing_file(tmp_path):
+    """An empty fetch is a normal write when there's nothing to protect -
+    e.g. a fresh checkout with no prior data/ directory."""
+    path = tmp_path / "posts.json"
+
+    save_items(str(path), [], "posts")
+
+    assert json.loads(path.read_text()) == []
+
+
+def test_save_items_writes_nonempty_result_over_existing_file(tmp_path):
+    path = tmp_path / "posts.json"
+    path.write_text(json.dumps([{"id": 1}]))
+
+    save_items(str(path), [{"id": 1}, {"id": 2}], "posts")
+
+    assert json.loads(path.read_text()) == [{"id": 1}, {"id": 2}]

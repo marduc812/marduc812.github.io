@@ -233,7 +233,7 @@ The app is now built.
 
 Before we run it, let’s confirm that the files are not there.
 
-```
+```text
 $ ls /tmp/pake-poc.sh
 ls: /tmp/pake-poc.sh: No such file or directory
 

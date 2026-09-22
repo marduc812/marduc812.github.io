@@ -1,5 +1,5 @@
 ---
-title: "How many Google&#8217;s questions can you answer?"
+title: "How many Google’s questions can you answer?"
 date: 2016-03-29T16:38:38
 categories: ["Fun", "Google", "interesting"]
 tags: ["Fun", "google"]

@@ -1,3 +1,4 @@
+import html
 import json
 import os
 
@@ -21,11 +22,17 @@ def build_id_maps():
 
 
 def yaml_escape(value: str) -> str:
-    return value.replace('"', '\\"')
+    # Backslashes first: escaping quotes inserts backslashes of its own,
+    # and doing it the other way round would double-escape those.
+    return value.replace("\\", "\\\\").replace('"', '\\"')
 
 
 def front_matter(post, media_by_id, category_by_id, tag_by_id) -> str:
-    title = yaml_escape(post["title"]["rendered"])
+    # WP returns the title as rendered HTML, so it carries entities like
+    # &#8217; for a curly apostrophe. Left as-is they reach the layout's
+    # Liquid `escape` filter, which escapes the ampersand again and puts a
+    # literal "&amp;#8217;" on the page.
+    title = yaml_escape(html.unescape(post["title"]["rendered"]))
     lines = [
         "---",
         f'title: "{title}"',

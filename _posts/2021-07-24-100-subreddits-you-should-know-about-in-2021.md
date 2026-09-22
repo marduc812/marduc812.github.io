@@ -25,7 +25,7 @@ So let’s go to the subreddits.
 
 ### Science
 
-[](/assets/uploads/2021/07/redditsave.com_oc_most_popular_web_browsers_between_1995_and_2019-2hach519z3k51.mp4)
+<video controls="" height="1080" src="/assets/uploads/2021/07/redditsave.com_oc_most_popular_web_browsers_between_1995_and_2019-2hach519z3k51.mp4" style="aspect-ratio: 1920 / 1080;" width="1920"></video>
 
 [/r/DataIsBeautiful](https://www.reddit.com/r/dataisbeautiful/comments/ija2rc/oc_most_popular_web_browsers_between_1995_and_2019/) – Most Popular Web Browsers between 1995 and 2019
 
@@ -367,7 +367,7 @@ Photographs that inadvertently resemble well-composed Renaissance style art.
 
 ## Chaos
 
-[](/assets/uploads/2021/07/airplane.mp4)
+<video controls="" height="480" src="/assets/uploads/2021/07/airplane.mp4" style="aspect-ratio: 854 / 480;" width="854"></video>
 
 Messy, chaotic, confusing, painful, surprising things that you don’t want to live. All in one group.
 

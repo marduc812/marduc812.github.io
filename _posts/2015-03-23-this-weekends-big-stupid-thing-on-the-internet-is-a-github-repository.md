@@ -1,5 +1,5 @@
 ---
-title: "This Weekend&#8217;s Big Stupid Thing on the Internet Is a GitHub Repository"
+title: "This Weekend’s Big Stupid Thing on the Internet Is a GitHub Repository"
 date: 2015-03-23T12:33:25
 categories: ["Fun", "News"]
 tags: ["Fun", "Github"]

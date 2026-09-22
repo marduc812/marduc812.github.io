@@ -15,3 +15,5 @@ What happens is that the right part of the screen stops responding normally beca
 ![](http://vignette2.wikia.nocookie.net/pacman/images/7/77/Splitscreen.gif/revision/latest?cb=20100614191114)
 
 Finally because of the missing screen part, there are not enough dots to proceed to the next level. In order to proceed Mrs Pac-Mac has to eat 244 dots but there are in total 131 (122 in the left part of the screen and 9 more in the right part).
+
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="675" loading="lazy" src="https://www.youtube.com/embed/IoVvgSwPDYk?feature=oembed" title="Meet the Man Who Beat 'Pac-Man'" width="1200"></iframe>

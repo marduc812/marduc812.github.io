@@ -25,7 +25,7 @@ So I decided to work with Double since it would be easier for me to display larg
 
 I won’t analyse the code behind the buttons or the EditText I will go straight to the formatting part. What I wanted to achieve is to have a number that if is smaller than 10.000.000 to appear normal and if it is larger than that to appear in form of E. Normally the Double would print 7 or 8 digits in front of the E but I only wanted to so I created a Method in order to format the numbers a bit. This method is called NumFormat and it takes a Double number as input and returns a String.
 
-```
+```java
 
 private String NumFormat(Double number) {
     double compare;
@@ -47,7 +47,7 @@ private String NumFormat(Double number) {
 
 If number is smaller than the value I compare it to, I want is to format it like a normal Interger, without any decimal digits. but if is larger I want it to be formatted with 3 decimal digits in front of the power and the value of E. Now I will call this method in my Activity.
 
-```
+```java
 
 con.setOnClickListener(new View.OnClickListener() {
     @Override

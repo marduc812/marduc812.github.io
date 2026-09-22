@@ -19,6 +19,6 @@ However, the organisers had lifted the ban just minutes before the jump.
 “Aikins’ leap represents the culmination of a 26-year career that will set a personal and world record for the highest jump without a parachute or wing suit,” his spokesman Justin Aclin said.  
 Mr Aikins, who is a safety and training adviser for the US Parachute Association, said his friend came up with the idea two years ago.
 
-[<https://cdn.streamable.com/video/mp4/h6bd.mp4>](https://cdn.streamable.com/video/mp4/h6bd.mp4?_=6)
+<video class="wp-video-shortcode" controls="" height="360" id="video-783-6" preload="metadata" width="640"><source src="https://cdn.streamable.com/video/mp4/h6bd.mp4?_=6" type="video/mp4"/><a href="https://cdn.streamable.com/video/mp4/h6bd.mp4">https://cdn.streamable.com/video/mp4/h6bd.mp4</a></video>
 
 Source:[BBC](http://www.bbc.com/news/world-us-canada-36935087)

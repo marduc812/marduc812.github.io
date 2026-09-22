@@ -10,4 +10,6 @@ A lot of those come from a Wilson factory in Thailand, where Benedict Redgrove w
 
 It’s a mesmerizing sight to behold, and very refreshing to see how things are made by focusing more on aesthetics and less on generic American voiceovers.
 
+<iframe allow="autoplay; fullscreen" allowfullscreen="" frameborder="0" height="675" loading="lazy" src="https://player.vimeo.com/video/162803063?dnt=1&amp;app_id=122963" title="How to Make a Tennis Ball" width="1200"></iframe>
+
 Source: [TNW](http://thenextweb.com/shareables/2016/07/25/tennis-balls-new-drug/)

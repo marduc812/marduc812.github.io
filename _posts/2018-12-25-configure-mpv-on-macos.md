@@ -19,7 +19,7 @@ After downloading the installation pretty easy, just extract the content of the 
 
 For that, a folder is required for mpv, in order to store its configuration. The easiest option is to clone `Argon's Github` repository, that uses the `autosub-mpv` plugin by vayan and loads a really well configured mpv.
 
-```
+```bash
 git clone https://github.com/Argon-/mpv-config.git ~/.config/mpv
 ```
 
@@ -27,13 +27,13 @@ git clone https://github.com/Argon-/mpv-config.git ~/.config/mpv
 
 In order to do it, `subliminal` is required. Subliminal is a library for automatically finding subtitles. Installation is really easy since it is part of brew.
 
-```
+```bash
 brew install subliminal
 ```
 
 To enable auto subtitle download, change the `input.conf` file and replace or specify a new key. In my case I replaced `b`, that by default it increases the video playback speed.
 
-```
+```text
 b      script_binding auto_load_subs ;find subtitles
 ```
 

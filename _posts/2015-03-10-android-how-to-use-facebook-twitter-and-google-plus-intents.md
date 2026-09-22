@@ -12,7 +12,7 @@ Social networks are part of our life for sure, some times facebook or twitter or
 
 For the Facebook intent you have to check if the user has facebook app installed or you just  have to lunch browser at the page you want. I will use Google for everything as a example.
 
-```
+```java
 
  try {
  Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/104958162837"));
@@ -44,7 +44,7 @@ Just visit this [page](http://mytwitterid.com/)( you can also find other service
 
 Now pace your code at the id field
 
-```
+```java
 
  Intent intent = null;
                   try {
@@ -65,7 +65,7 @@ Now pace your code at the id field
 
 Google plus has the easiest was to launch a page of google+ app or browser.
 
-```
+```java
 
  startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://plus.google.com/+google")));
 ```

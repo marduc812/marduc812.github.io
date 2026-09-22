@@ -1,4 +1,4 @@
-from convert_posts import front_matter, post_filename
+from convert_posts import front_matter, post_filename, yaml_escape
 
 SAMPLE_POST = {
     "date": "2021-03-15T10:30:00",
@@ -35,3 +35,20 @@ def test_front_matter_skips_missing_featured_media():
     post = dict(SAMPLE_POST, featured_media=999)
     fm = front_matter(post, MEDIA_BY_ID, CATEGORY_BY_ID, TAG_BY_ID)
     assert "image:" not in fm
+
+
+def test_front_matter_unescapes_html_entities_in_title():
+    """WP returns titles as rendered HTML. Left escaped, the layout's Liquid
+    `escape` filter escapes the ampersand again and the page shows a literal
+    '&amp;#8217;'."""
+    post = dict(SAMPLE_POST, title={"rendered": "Scheme is CSP&#8217;s Weakest Link"})
+    fm = front_matter(post, MEDIA_BY_ID, CATEGORY_BY_ID, TAG_BY_ID)
+    assert 'title: "Scheme is CSP\u2019s Weakest Link"' in fm
+    assert "&#8217;" not in fm
+
+
+def test_yaml_escape_escapes_backslash_before_quote():
+    assert yaml_escape(r"C:\Windows") == r"C:\\Windows"
+    # The backslash the quote-escape inserts must not itself be doubled.
+    assert yaml_escape(r'say "hi"') == r"say \"hi\""
+    assert yaml_escape(r'path\ and "quote"') == r"path\\ and \"quote\""

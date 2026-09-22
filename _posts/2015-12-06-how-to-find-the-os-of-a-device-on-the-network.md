@@ -11,7 +11,7 @@ Most of you know about about Metasploit, and how powerful this tool can be.I’m
 **1. Start the postgresql service.**   
 That way we will be able to store the data form the nmap to our database. Postgresql is a DB that is used by Metasploit.
 
-```
+```bash
 
 service postgresql start
 ```
@@ -19,7 +19,7 @@ service postgresql start
 This command gets no output so we need to check if postgresql is actually running.  
 type:
 
-```
+```bash
 
 service postgresql status
 ```
@@ -28,7 +28,7 @@ service postgresql status
 
 **2. Start Metasploit**
 
-```
+```bash
 
 msfconsole
 ```
@@ -37,7 +37,7 @@ Now Metasploit is running. You can use the –help command if you need more info
 
 **3. NMAP scan the network**
 
-```
+```bash
 
 db_nmap -A 192.168.1.0/24 -v
 ```
@@ -50,7 +50,7 @@ This could take a while depending on how many devices are connected to your netw
 
 Now we want to see the list of the connected devices.
 
-```
+```bash
 
 hosts
 ```
@@ -63,7 +63,7 @@ and what we get is something like that.
 
 Now we have to use smb\_version in order to find more options about the OS. Type the following.
 
-```
+```text
 
 use auxiliary/scanner/smb/smb_version
 ```
@@ -74,14 +74,14 @@ By typing **show options** we can see what fields we have to fill.
 
 Now we have to fill the RHOSTS field. This is where we enter the IP of the device we want to find the OS. In my case is 192.168.1.73. To do that we just use the set command.
 
-```
+```bash
 
 set RHOSTS 192.168.1.73
 ```
 
 Now we will increase the threads by changing the THREADS number from 1 to 11.
 
-```
+```bash
 
 set THREADS 11
 ```
@@ -92,7 +92,7 @@ set THREADS 11
 
 Finally type run and hit enter in order to run the module.
 
-```
+```bash
 
 run
 ```

@@ -10,7 +10,7 @@ Burp Suite, our favorite proxy is used for every assessment which uses HTTP comm
 
 The easiest way to bypass this restriction, is to merge all the certificates into a `PKCS#12` file, which will contain all the certificates including the intermediate `.pem` certificates. To do it, all you need is `openssl`.
 
-```
+```text
 openssl pkcs12 -export -out certificate.pfx -inkey privatekey.key -in certificate.cer -certfile certificate.pem
 ```
 

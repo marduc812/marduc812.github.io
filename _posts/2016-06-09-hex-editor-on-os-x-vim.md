@@ -10,7 +10,7 @@ Today I was playing with Spotify and while I was browsing the Cache folders, I f
 
 You don’t need to download anything the only think you have to do is just open the file by using the vim text editor from your terminal. In order to open a file with vim you type.
 
-```
+```bash
 vim {path of the file you want or just drop the file here}
 ```
 
@@ -18,7 +18,7 @@ vim {path of the file you want or just drop the file here}
 
 When you see something like the image above type the following:
 
-```
+```bash
 :% ! xxd
 ```
 
@@ -26,7 +26,7 @@ This will turn you editor into a hex editor like shown in the picture below. [!
 
 If you want to turn it back to normal editor use the same command like before just type -r in the end.
 
-```
+```bash
 :% ! xxd -r
 ```
 

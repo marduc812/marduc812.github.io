@@ -1,5 +1,5 @@
 ---
-title: "Schemes are CSP&#8217;s Weakest Link"
+title: "Schemes are CSP’s Weakest Link"
 date: 2025-09-02T21:33:00
 categories: ["Security"]
 tags: ["Security", "Web"]
@@ -18,7 +18,7 @@ I had seen in many occasions a scheme like `https:` in one of my assessments, bu
 
 In order to test this, i set up 2 records in my localhost, one called `localallow.com` and another one `localdeny.com`. The idea was to allow only the localallow.com domain in my CSP and add a scheme to see how it will go. To do that, i set up a basic HTTPS web server using node. There is a page called `example.js`, which just servers a simple JS file.
 
-```
+```js
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
@@ -88,7 +88,7 @@ The script executes although the domain `localdeny.com` is not listed in the lis
 
 Finally, in case the application allows different directives like `data:` or `blob:`, those also can be used for XSS attacks, like by passing an SVG data field to an image `<img src="data:image/svg+xml;base64,..." />` or by creating a blob object and passing it to an iframe.
 
-```
+```js
 let maliciousBlob = new Blob(["<script>alert('XSS');</script>"], { type: 'text/html' });
 let blobURL = URL.createObjectURL(maliciousBlob);
 document.body.innerHTML = `<iframe src="${blobURL}"></iframe>`;

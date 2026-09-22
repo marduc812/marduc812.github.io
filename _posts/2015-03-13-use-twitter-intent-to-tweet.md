@@ -12,7 +12,7 @@ I’m going to test this feature using some EditText.
 
 [![tweet](/assets/uploads/2015/03/tweet.jpg)](/assets/uploads/2015/03/tweet.jpg)
 
-```
+```java
 
  tweet = tweetET.getText().toString();
                 Intent tweetIntent = new Intent(Intent.ACTION_SEND);
@@ -41,7 +41,7 @@ I’m going to test this feature using some EditText.
 
 You can display the number of characters entered so far using the addTextChangedListener
 
-```
+```java
 tweetET.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -62,7 +62,7 @@ tweetET.addTextChangedListener(new TextWatcher() {
 
 This won’t stop user from entering more than 140 characters. If want to stop him you can use XML and add android:maxLength=”140″ at your editText.
 
-```
+```xml
 
 <EditText
         android:layout_width="wrap_content"

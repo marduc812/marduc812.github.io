@@ -34,6 +34,19 @@ def fetch_all(endpoint: str, per_page: int = 100) -> list[dict]:
     return items
 
 
+def save_items(path: str, items: list[dict], label: str) -> None:
+    """Write items to path, unless the fetch came back empty and an
+    existing file already holds real data — a transient API hiccup (rate
+    limit, timeout, WP returning a 200 with no body) must not truncate a
+    good local copy to zero items."""
+    if not items and os.path.exists(path) and os.path.getsize(path) > 2:
+        print(f"{label}: fetch returned 0 items, keeping existing {os.path.basename(path)}")
+        return
+    with open(path, "w") as f:
+        json.dump(items, f)
+    print(f"{label}: {len(items)} items")
+
+
 def main():
     os.makedirs(DATA_DIR, exist_ok=True)
     for endpoint, filename in [
@@ -43,9 +56,7 @@ def main():
         ("tags", "tags.json"),
     ]:
         items = fetch_all(endpoint)
-        with open(os.path.join(DATA_DIR, filename), "w") as f:
-            json.dump(items, f)
-        print(f"{endpoint}: {len(items)} items")
+        save_items(os.path.join(DATA_DIR, filename), items, endpoint)
 
 
 if __name__ == "__main__":

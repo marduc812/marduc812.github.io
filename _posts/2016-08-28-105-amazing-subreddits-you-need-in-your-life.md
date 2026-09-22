@@ -22,19 +22,19 @@ This subreddit offers some ~~great~~  aweful lifehacks, in order to make your l
 
 #### r/EngineeringPorn
 
-[<http://i.imgur.com/tsJ0Nhf.mp4>](http://i.imgur.com/tsJ0Nhf.mp4?_=1)
+<video class="wp-video-shortcode" controls="" height="360" id="video-810-1" preload="metadata" width="640"><source src="http://i.imgur.com/tsJ0Nhf.mp4?_=1" type="video/mp4"/><a href="http://i.imgur.com/tsJ0Nhf.mp4">http://i.imgur.com/tsJ0Nhf.mp4</a></video>
 
 Like you could clearly understand from the subreddits name, redditors upload everything that has to do with Engineering Porn. From CNC machinery operating to flying toothpicks, everything is [in here](https://www.reddit.com/r/engineeringporn).
 
 #### r/MechanicalGifs
 
-[<http://i.imgur.com/3bB87DX.mp4>](http://i.imgur.com/3bB87DX.mp4?_=2)
+<video class="wp-video-shortcode" controls="" height="360" id="video-810-2" preload="metadata" width="640"><source src="http://i.imgur.com/3bB87DX.mp4?_=2" type="video/mp4"/><a href="http://i.imgur.com/3bB87DX.mp4">http://i.imgur.com/3bB87DX.mp4</a></video>
 
 [r/MechanicalGifs](https://www.reddit.com/r/mechanical_gifs) hosts thousands gifs of mechanical devices just doing they job. All of them are oddly satisfying to watch so definitely you could subscribe to this subreddit.
 
 #### r/OddlySatisfying
 
-[<http://i.imgur.com/0eiDKnb.mp4>](http://i.imgur.com/0eiDKnb.mp4?_=3)
+<video class="wp-video-shortcode" controls="" height="360" id="video-810-3" preload="metadata" width="640"><source src="http://i.imgur.com/0eiDKnb.mp4?_=3" type="video/mp4"/><a href="http://i.imgur.com/0eiDKnb.mp4">http://i.imgur.com/0eiDKnb.mp4</a></video>
 
 There is no need for any definitions about this subreddit. [r/OddlySatisfying](https://www.reddit.com/r/oddlysatisfying) has more than 500.000 satisfied subscribers and why wouldn’t you be a part of it?
 
@@ -52,7 +52,7 @@ Everyone who has a facebook account, have at least on old person on their friend
 
 #### r/SweatyPalms
 
-[<https://fat.gfycat.com/BouncyAmusedArabianoryx.webm>](https://fat.gfycat.com/BouncyAmusedArabianoryx.webm?_=4)
+<video class="wp-video-shortcode" controls="" height="360" id="video-810-4" preload="metadata" width="640"><source src="https://fat.gfycat.com/BouncyAmusedArabianoryx.webm?_=4" type="video/webm"/><a href="https://fat.gfycat.com/BouncyAmusedArabianoryx.webm">https://fat.gfycat.com/BouncyAmusedArabianoryx.webm</a></video>
 
 People are crazy, and awesome and this is what [r/SweatyPalms](https://www.reddit.com/r/SweatyPalms) is for. Lurking this channel will make your palms sweaty so better subscribe A.S.A.P
 
@@ -74,7 +74,7 @@ When something is wrong with the techies, it will be here. Browsing [this subred
 
 #### r/InterestingAsFuck
 
-[<http://i.imgur.com/xcNfBq1.mp4>](http://i.imgur.com/xcNfBq1.mp4?_=5)
+<video class="wp-video-shortcode" controls="" height="360" id="video-810-5" preload="metadata" width="640"><source src="http://i.imgur.com/xcNfBq1.mp4?_=5" type="video/mp4"/><a href="http://i.imgur.com/xcNfBq1.mp4">http://i.imgur.com/xcNfBq1.mp4</a></video>
 
 An alternative to famous mildly interesting. You can spend a lot of hours of your life just doing nothing and watching those gifs. Subscribe to [r/InterestingAsFuck](https://www.reddit.com/r/interestingasfuck/)
 

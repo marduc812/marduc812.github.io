@@ -1,5 +1,5 @@
 ---
-title: "Amazing Miniature Scenes Shot with Model Cars, Forced Perspective and a $250 P&#038;S"
+title: "Amazing Miniature Scenes Shot with Model Cars, Forced Perspective and a $250 P&S"
 date: 2015-01-24T10:01:51
 categories: ["Fun"]
 tags: ["cars", "Fun", "photography"]

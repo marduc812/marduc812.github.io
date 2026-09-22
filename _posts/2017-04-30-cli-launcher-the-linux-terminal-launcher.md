@@ -1,5 +1,5 @@
 ---
-title: "CLI launcher &#8211; The Linux terminal Launcher"
+title: "CLI launcher – The Linux terminal Launcher"
 date: 2017-04-30T17:16:45
 categories: ["Android", "Android Apps", "Fun"]
 tags: ["Android", "Android app"]

@@ -1,5 +1,5 @@
 ---
-title: "Burp Suite &#8211; Battle Royale Edition"
+title: "Burp Suite – Battle Royale Edition"
 date: 2019-01-21T22:15:43
 categories: ["Security", "Tuts"]
 tags: ["Security", "tutorial"]
