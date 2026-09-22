@@ -17,3 +17,8 @@
 
 # Raw REST API dumps - regeneratable, not needed once posts/assets exist
 /scripts/migration/data/
+
+# Python virtualenvs and caches
+**/.venv/
+**/__pycache__/
+.pytest_cache/
