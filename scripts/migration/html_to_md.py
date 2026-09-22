@@ -1,9 +1,12 @@
 import re
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup
 from markdownify import MarkdownConverter
 
 UPLOADS_RE = re.compile(r'/wp-content/uploads/(\d{4}/\d{2}/[^\s"\'<>)?]+)')
+PHOTON_HOST_RE = re.compile(r'^https?://i[0-2]\.wp\.com/(.+)$')
+PHOTON_QUERY_KEYS = {"w", "h", "resize", "ssl", "quality", "crop", "fit", "zoom", "strip"}
 
 
 def extract_uploads_path(url: str) -> str | None:
@@ -26,6 +29,25 @@ def media_asset_path(media_obj: dict) -> str:
     return path
 
 
+def unwrap_photon_url(url: str) -> str | None:
+    """Given a Jetpack Photon-proxied URL (https://i0.wp.com/<original>),
+    return the original external URL with Photon's own resize/ssl query
+    params stripped. Handles images that Photon proxies from a host other
+    than this site's own uploads - e.g. old posts hotlinking Google Photos
+    or Imgur - which never appear in the WP media library and so can't be
+    resolved to a local asset path. Returns None if url isn't a Photon
+    URL."""
+    match = PHOTON_HOST_RE.match(url)
+    if not match:
+        return None
+    parsed = urlsplit("https://" + match.group(1))
+    kept_query = [
+        (k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True)
+        if k not in PHOTON_QUERY_KEYS
+    ]
+    return urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(kept_query), ""))
+
+
 def rewrite_image_srcs(html: str, media_by_id: dict) -> str:
     """Rewrite every <img> tag's src to its local asset path. Prefers
     resolving via the wp-image-{ID} class against media_by_id (gets the
@@ -44,6 +66,8 @@ def rewrite_image_srcs(html: str, media_by_id: dict) -> str:
                 break
         if target is None and img.get("src"):
             target = extract_uploads_path(img["src"])
+        if target is None and img.get("src"):
+            target = unwrap_photon_url(img["src"])
         if target is not None:
             img["src"] = target
         if img.has_attr("srcset"):
@@ -63,6 +87,8 @@ def rewrite_download_links(html: str) -> str:
             if not url:
                 continue
             target = extract_uploads_path(url)
+            if target is None:
+                target = unwrap_photon_url(url)
             if target is not None:
                 el[attr] = target
     return str(soup)

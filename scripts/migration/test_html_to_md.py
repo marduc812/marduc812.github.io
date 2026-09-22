@@ -5,6 +5,7 @@ from html_to_md import (
     rewrite_download_links,
     normalize_enlighter_blocks,
     convert_post_content,
+    unwrap_photon_url,
 )
 
 
@@ -49,6 +50,25 @@ def test_rewrite_image_srcs_falls_back_to_path_parsing():
     )
     result = rewrite_image_srcs(html, media_by_id={})
     assert 'src="/assets/uploads/2018/07/untagged.jpg"' in result
+
+
+def test_unwrap_photon_url_external_host():
+    url = "https://i0.wp.com/lh5.googleusercontent.com/foo/bar/Screenshot.png?w=1200&ssl=1"
+    assert unwrap_photon_url(url) == "https://lh5.googleusercontent.com/foo/bar/Screenshot.png"
+
+
+def test_unwrap_photon_url_not_photon():
+    assert unwrap_photon_url("https://example.com/foo.jpg") is None
+
+
+def test_rewrite_image_srcs_unwraps_photon_for_external_host():
+    html = (
+        '<img class="alignnone" '
+        'src="https://i0.wp.com/i.imgur.com/A8Ts3kA.png?w=1200">'
+    )
+    result = rewrite_image_srcs(html, media_by_id={})
+    assert 'src="https://i.imgur.com/A8Ts3kA.png"' in result
+    assert "i0.wp.com" not in result
 
 
 def test_rewrite_download_links_rewrites_href_and_video_src():
