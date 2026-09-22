@@ -4,6 +4,17 @@ permalink: /:year/:month/:day/:title/
 markdown: kramdown
 highlighter: rouge
 
+# Post front matter carries naive timestamps (no offset) copied straight from
+# WordPress, whose own site timezone was UTC (all 113 posts have date == date_gmt).
+# Without this, Jekyll interprets those timestamps in the build host's local
+# timezone and shifts permalinks by a day on any non-UTC machine.
+timezone: UTC
+
+exclude:
+  - scripts/
+  - docs/
+  - README.md
+
 defaults:
   - scope:
       path: ""
