@@ -6,28 +6,10 @@ import urllib.request
 
 BASE = "https://marduc812.com/wp-json/wp/v2"
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
-
-# Install a custom opener that sends User-Agent to avoid 403 Forbidden from servers
-# that reject requests without one. This is transparent to mocked tests which patch
-# urllib.request.urlopen directly.
-_handler = urllib.request.HTTPSHandler()
-_opener = urllib.request.build_opener(_handler)
-_opener.addheaders = [("User-Agent", "Mozilla/5.0 (compatible; WordPress-Data-Migration)")]
-_urlopen_impl = urllib.request.urlopen
-
-def urlopen(url, *args, **kwargs):
-    """Wrapper around urlopen that adds User-Agent header."""
-    if not isinstance(url, urllib.request.Request):
-        url = urllib.request.Request(url)
-    if not url.has_header("User-Agent"):
-        url.add_unredirected_header("User-Agent", "Mozilla/5.0 (compatible; WordPress-Data-Migration)")
-    return _urlopen_impl(url, *args, **kwargs)
-
-# Replace urllib.request.urlopen with our wrapper
-urllib.request.urlopen = urlopen
+USER_AGENT = "Mozilla/5.0 (compatible; WordPress-Data-Migration)"
 
 
-def fetch_all(endpoint: str, per_page: int = 99) -> list[dict]:
+def fetch_all(endpoint: str, per_page: int = 100) -> list[dict]:
     """Fetch every item from a paginated WP REST API collection endpoint.
     Stops when the API returns HTTP 400 (rest_post_invalid_page_number),
     which is WordPress's normal way of saying "no more pages" once you
@@ -35,9 +17,10 @@ def fetch_all(endpoint: str, per_page: int = 99) -> list[dict]:
     items = []
     page = 1
     while True:
-        url = f"{BASE}/{endpoint}?page={page}&per_page={per_page}"
+        url = f"{BASE}/{endpoint}?per_page={per_page}&page={page}"
+        request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
         try:
-            with urllib.request.urlopen(url) as resp:
+            with urllib.request.urlopen(request) as resp:
                 batch = json.loads(resp.read())
         except urllib.error.HTTPError as e:
             if e.code == 400:
