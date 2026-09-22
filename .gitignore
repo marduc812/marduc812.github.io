@@ -6,3 +6,6 @@
 *creds*
 *password*
 *secret*
+
+# Local worktrees for isolated task execution
+/.worktrees/
