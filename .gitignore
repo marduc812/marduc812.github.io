@@ -9,3 +9,11 @@
 
 # Local worktrees for isolated task execution
 /.worktrees/
+
+# Jekyll build artifacts
+/_site/
+/.jekyll-cache/
+/.bundle/
+
+# Raw REST API dumps - regeneratable, not needed once posts/assets exist
+/scripts/migration/data/

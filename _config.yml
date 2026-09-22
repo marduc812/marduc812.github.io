@@ -1,0 +1,5 @@
+title: marduc812
+theme: minima
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+highlighter: rouge
