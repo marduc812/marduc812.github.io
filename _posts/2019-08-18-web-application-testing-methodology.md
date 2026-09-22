@@ -85,7 +85,7 @@ Nowadays, directory listing is not enabled by default for most of the public sof
 ##### Reference
 
 - [BurpSuite](https://portswigger.net/burp)
-- Use tools listed on [Crawling / File Enumeration](#crawling) step
+- Use tools listed on [Crawling / File Enumeration](#crawling--file-enumeration) step
 
 ---
 
