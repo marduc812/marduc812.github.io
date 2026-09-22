@@ -3,3 +3,10 @@ theme: minima
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
 highlighter: rouge
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
