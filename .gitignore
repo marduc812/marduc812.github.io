@@ -1,0 +1,8 @@
+# Internal planning docs - not part of the published site
+/docs/
+
+# Never allow credentials/secrets into this repo
+*.env
+*creds*
+*password*
+*secret*
