@@ -3,9 +3,13 @@
 
 # Never allow credentials/secrets into this repo
 *.env
-*creds*
-*password*
-*secret*
+.env.*
+*.pem
+*.key
+credentials.json
+creds.txt
+secrets.yml
+secrets.json
 
 # Local worktrees for isolated task execution
 /.worktrees/
