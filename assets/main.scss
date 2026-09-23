@@ -1,0 +1,247 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
+
+// Tech / developer palette — overrides Minima's defaults before it loads.
+// These are Minima's own !default variables, so setting them here changes
+// colors and type everywhere on the site (posts, footer, code, tables),
+// not just the homepage.
+$base-font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$code-font-family: 'JetBrains Mono', SFMono-Regular, Consolas, monospace;
+
+$text-color:       #1c2128;
+$background-color: #f6f8fa;
+$brand-color:      #0969da;
+
+$grey-color:       #6e7781;
+
+$content-width:    860px;
+
+@import "minima";
+
+// ---------------------------------------------------------------
+// Global touches
+// ---------------------------------------------------------------
+
+body {
+  background-image: radial-gradient(#d0d7de 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+h1, h2, h3, h4, h5, h6,
+.site-title,
+.post-title,
+.post-list-heading {
+  font-family: $code-font-family;
+}
+
+// ---------------------------------------------------------------
+// Header — dark terminal-style bar
+// ---------------------------------------------------------------
+
+.site-header {
+  background-color: #0d1117;
+  border-top: none;
+  border-bottom: 2px solid $brand-color;
+}
+
+.site-title {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0;
+
+  &,
+  &:visited {
+    color: #e6edf3;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  // RGB-split glitch effect on hover: two copies of the text, clipped into
+  // shifting horizontal slivers and tinted cyan/magenta, layered over the
+  // real text so it reads as a flicker rather than a redraw.
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0d1117;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover::before {
+    opacity: 0.85;
+    color: #ff2e63;
+    animation: glitch-anim-1 0.4s infinite linear alternate-reverse;
+  }
+
+  &:hover::after {
+    opacity: 0.85;
+    color: #00fff9;
+    animation: glitch-anim-2 0.4s infinite linear alternate-reverse;
+  }
+
+  &:hover {
+    animation: glitch-skew 0.4s infinite linear alternate-reverse;
+  }
+}
+
+@keyframes glitch-anim-1 {
+  0%   { clip-path: inset(10% 0 70% 0); transform: translate(-2px, -1px); }
+  20%  { clip-path: inset(60% 0 5% 0);  transform: translate(2px, 1px); }
+  40%  { clip-path: inset(30% 0 45% 0); transform: translate(-1px, 2px); }
+  60%  { clip-path: inset(80% 0 2% 0);  transform: translate(2px, -2px); }
+  80%  { clip-path: inset(5% 0 80% 0);  transform: translate(-2px, 1px); }
+  100% { clip-path: inset(45% 0 30% 0); transform: translate(1px, -1px); }
+}
+
+@keyframes glitch-anim-2 {
+  0%   { clip-path: inset(70% 0 10% 0); transform: translate(2px, 1px); }
+  20%  { clip-path: inset(5% 0 60% 0);  transform: translate(-2px, -1px); }
+  40%  { clip-path: inset(45% 0 30% 0); transform: translate(1px, -2px); }
+  60%  { clip-path: inset(2% 0 80% 0);  transform: translate(-2px, 2px); }
+  80%  { clip-path: inset(80% 0 5% 0);  transform: translate(2px, -1px); }
+  100% { clip-path: inset(30% 0 45% 0); transform: translate(-1px, 1px); }
+}
+
+@keyframes glitch-skew {
+  0%, 100% { transform: skew(0deg); }
+  20%      { transform: skew(1deg); }
+  40%      { transform: skew(-1deg); }
+  60%      { transform: skew(0.5deg); }
+  80%      { transform: skew(-0.5deg); }
+}
+
+.site-nav .page-link {
+  color: #c9d1d9;
+  font-family: $code-font-family;
+  font-size: $small-font-size;
+
+  &:hover {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 2px solid $brand-color;
+  }
+}
+
+@include media-query($on-palm) {
+  .site-nav {
+    background-color: #0d1117;
+    border-color: #30363d;
+
+    .page-link { color: #c9d1d9; }
+
+    .menu-icon > svg {
+      fill: #c9d1d9;
+    }
+  }
+}
+
+// ---------------------------------------------------------------
+// Footer
+// ---------------------------------------------------------------
+
+.site-footer {
+  border-top: 2px solid $brand-color;
+}
+
+// ---------------------------------------------------------------
+// Post list — card grid with larger thumbnails
+// ---------------------------------------------------------------
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+  padding: 0;
+
+  li {
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 16px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(9, 105, 218, 0.15);
+      border-color: $brand-color;
+    }
+  }
+}
+
+.post-thumbnail {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 6px;
+  margin: -16px -16px 12px -16px;
+  width: calc(100% + 32px);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.post-list .post-meta {
+  font-family: $code-font-family;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: $brand-color;
+}
+
+.post-list .post-link {
+  font-family: $base-font-family;
+}
+
+// ---------------------------------------------------------------
+// Code blocks — dark terminal theme
+// ---------------------------------------------------------------
+
+pre, code {
+  font-family: $code-font-family;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background-color: #0d1117;
+  color: #c9d1d9;
+}
+
+.highlight {
+  background: #0d1117;
+
+  .highlighter-rouge & {
+    background: #0d1117;
+  }
+
+  .c, .cm, .c1, .cs, .cp   { color: #8b949e; }
+  .k, .kc, .kd, .kp, .kr, .ow { color: #ff7b72; }
+  .kt                       { color: #ff7b72; }
+  .s, .s1, .s2, .sb, .sc, .sd,
+  .se, .sh, .si, .sx, .ss   { color: #a5d6ff; }
+  .sr                       { color: #a5d6ff; }
+  .m, .mf, .mh, .mi, .mo, .il { color: #79c0ff; }
+  .nf, .nc                  { color: #d2a8ff; }
+  .nt, .na                  { color: #7ee787; }
+  .nb, .bp                  { color: #ffa657; }
+  .no, .vc, .vg, .vi, .nv   { color: #79c0ff; }
+  .err                      { color: #ff7b72; background-color: transparent; }
+  .gh, .go, .gp, .gu        { color: #8b949e; }
+  .gd                       { color: #ffa198; background-color: rgba(248, 81, 73, 0.15); }
+  .gi                       { color: #7ee787; background-color: rgba(63, 185, 80, 0.15); }
+}
