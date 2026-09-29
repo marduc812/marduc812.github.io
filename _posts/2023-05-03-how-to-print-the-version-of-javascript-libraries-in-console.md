@@ -8,6 +8,13 @@ image: /assets/uploads/2023/05/javascript_versions.jpg
 
 During a web assessment is common to find some outdated JavaScript library. I like to showcase the version of the outdated library in a console print with the URL where it loaded. Below is the list of console commands, to get their versions.
 
+#### ace-builds
+
+```js
+ace.version
+//'1.32.6'
+```
+
 #### Angular
 
 ```js
