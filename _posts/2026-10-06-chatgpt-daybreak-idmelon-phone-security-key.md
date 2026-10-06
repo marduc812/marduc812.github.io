@@ -1,5 +1,5 @@
 ---
-title: "ChatGPT Daybreak with IDmelon: use your phone as a security key and save €40 on a YubiKey"
+title: "ChatGPT Daybreak without a YubiKey"
 date: 2026-10-06T13:06:28
 categories: ["Security"]
 image: /assets/uploads/2026/10/chatgpt-daybreak-idmelon-banner.webp
